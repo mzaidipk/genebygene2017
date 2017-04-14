@@ -31,5 +31,11 @@ You can now launch the application by using Ctrl + F5;
 
 Note: if IIS ports are different please look for port 24707 in the all places and replace with yours for IIS Express and 4200 for Express Server.
 
+![ScreenShot](https://raw.githubusercontent.com/mzaidipk/genebygene2017/master/Images/genebygene1.JPG)
+
+![ScreenShot](https://raw.githubusercontent.com/mzaidipk/genebygene2017/master/Images/genebygene2.JPG)
+
+![ScreenShot](https://raw.githubusercontent.com/mzaidipk/genebygene2017/master/Images/genebygene3.JPG)
+
 
 
