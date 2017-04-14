@@ -1,0 +1,60 @@
+<h1>
+  Samples
+</h1>
+<a class="btn btn-primary" [routerLink]="['samples/add']">Add New Sample</a>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search</h3>
+  </div>
+  <div class="panel-body">
+    <div class="form-group col-md-4">
+      <label class="control-label">First|Last-Name :</label>
+      <input type="text" [(ngModel)]="nameSearch" class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" id="nameSearch" style="width: 100%;" />
+    </div>
+    <div class="form-group col-md-4">
+      <label class="control-label">Status:</label>
+      <select name="status" id="status" class="form-control" [(ngModel)]="statusId">
+        <option value="0">Received</option>
+        <option value="1">Accessioning</option>
+        <option value="2">In Lab</option>
+        <option value="3">Report Generation</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-12">
+      <button class="pull-right btn btn-primary" style="margin-left:10px;" (click)="getSamplesbyName()">
+          <span>
+              <i class="fa fa-search"></i>
+          </span>
+          <span class="ng-scope">SearchByName</span>
+      </button>
+      <button class="pull-right btn btn-primary" (click)="getSamplesbyStatus()">
+          <span>
+              <i class="fa fa-search"></i>
+          </span>
+          <span class="ng-scope">SearchByStatus</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>SampleId</th>
+      <th>Barcode</th>
+      <th>Date Created</th>
+      <th>Created By</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let sample of samples; let i = index">
+      <td>{{sample.sampleId}}</td>
+      <td>{{sample.barcode}}</td>
+      <td>{{sample.createdAt | date:'medium'}}</td>
+      <td>{{sample.createdByUser}}</td>
+      <td>{{sample.status}}</td>
+      <td><button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+    </tr>
+  </tbody>
+</table>
